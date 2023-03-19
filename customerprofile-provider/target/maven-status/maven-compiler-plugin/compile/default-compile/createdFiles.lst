@@ -1,0 +1,4 @@
+com\contracttest\pact\AppLauncher.class
+com\contracttest\pact\CustomerProfileController.class
+com\contracttest\pact\model\CustomerProfile$CustomerProfileBuilder.class
+com\contracttest\pact\model\CustomerProfile.class

@@ -1,0 +1,45 @@
+{
+    "provider": {
+        "name": "customerProfileProvider"
+    },
+    "consumer": {
+        "name": "customerProfileConsumer"
+    },
+    "interactions": [
+        {
+            "description": "A contact request for customer Profile",
+            "request": {
+                "method": "GET",
+                "path": "/getCustomerProfile"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "text/json;charset=UTF-8"
+                },
+                "body": "{\"firstName\":\"Punith\",\"lastName\":\"Rajkumar\",\"ssn\":\"1234578\",\"phoneNumber\":\"8907865478\",\"emailAddress\":\"xyz.abc@gmail.com\",\"customerNumber\":\"684088275\",\"customerCompanyNumber\":\"111\",\"originatingAppId\":\"BookMyShow\"}",
+                "matchingRules": {
+                    "header": {
+                        "Content-Type": {
+                            "matchers": [
+                                {
+                                    "match": "regex",
+                                    "regex": "text/json;charset=UTF-8"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.13"
+        }
+    }
+}

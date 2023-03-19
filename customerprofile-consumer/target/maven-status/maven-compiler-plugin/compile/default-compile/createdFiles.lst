@@ -1,0 +1,3 @@
+com\contracttest\pact\CustomerProfile.class
+com\contracttest\pact\CustomerProfileConsumer.class
+com\contracttest\pact\CustomerProfile$CustomerProfileBuilder.class
