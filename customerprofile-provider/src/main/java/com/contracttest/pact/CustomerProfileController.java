@@ -1,14 +1,13 @@
 package com.contracttest.pact;
 
 import com.contracttest.pact.model.CustomerProfile;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by mariaisabelmunozvilacides on 08/03/2018.
- */
 
 @RestController
 public class CustomerProfileController {
@@ -46,8 +45,7 @@ public class CustomerProfileController {
     }
 
     @RequestMapping("/getCustomerProfile/{customerNumber}")
-    @ResponseBody
-    public CustomerProfile getCustomerProfile(@PathVariable String name) {
-        return customerProfileStore.get(name);
+    public ResponseEntity<CustomerProfile> getCustomerProfile(@PathVariable String name) {
+        return new ResponseEntity<CustomerProfile>(customerProfileStore.get(name), HttpStatus.OK);
     }
 }

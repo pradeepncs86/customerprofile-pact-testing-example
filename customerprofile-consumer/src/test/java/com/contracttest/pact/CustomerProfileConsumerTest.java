@@ -30,7 +30,7 @@ public class CustomerProfileConsumerTest {
                 .method("GET")
                 .willRespondWith()
                 .status(200)
-                .matchHeader(HttpHeaders.CONTENT_TYPE, "text/json;charset=UTF-8")
+                .matchHeader(HttpHeaders.CONTENT_TYPE, "application/json;charset=UTF-8")
                 .body(new ObjectMapper().writeValueAsString(getCustomerProfilesFromStore().get("684088275")))
                 .toPact();
     }

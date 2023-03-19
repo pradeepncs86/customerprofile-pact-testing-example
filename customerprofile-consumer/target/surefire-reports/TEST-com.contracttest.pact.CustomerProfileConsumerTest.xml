@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.contracttest.pact.CustomerProfileConsumerTest" time="1.038" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.contracttest.pact.CustomerProfileConsumerTest" time="1.094" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.17+8-jvmci-22.3-b08"/>
     <property name="sun.boot.library.path" value="D:\softwares\graalvm-ce-java11-22.3.0\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\IntelijWorkSpace\contractTestingExample-master"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\IntelijWorkSpace\customerprofile-pact-testing-example"/>
     <property name="java.vm.vendor" value="GraalVM Community"/>
     <property name="java.vendor.url" value="https://www.graalvm.org/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\IntelijWorkSpace\contractTestingExample-master"/>
+    <property name="user.dir" value="D:\IntelijWorkSpace\customerprofile-pact-testing-example"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.17+8-jvmci-22.3-b08"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -44,9 +44,10 @@
     <property name="java.specification.version" value="11"/>
     <property name="user.name" value="prade"/>
     <property name="java.class.path" value="C:\Program Files\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="debug"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher verify pact:publish --debug"/>
     <property name="java.home" value="D:\softwares\graalvm-ce-java11-22.3.0"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -66,5 +67,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.contracttest.pact.CustomerProfileConsumerTest" name="getCustomerProfile" time="1.038"/>
+  <testcase classname="com.contracttest.pact.CustomerProfileConsumerTest" name="getCustomerProfile" time="1.094"/>
 </testsuite>

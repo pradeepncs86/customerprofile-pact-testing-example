@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.contracttest.pact.CustomerProfileProviderPactTest" time="0" tests="1" errors="1" skipped="0" failures="0">
+<testsuite name="com.contracttest.pact.CustomerProfileProviderPactTest" time="3.175" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.17+8-jvmci-22.3-b08"/>
     <property name="sun.boot.library.path" value="D:\softwares\graalvm-ce-java11-22.3.0\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\IntelijWorkSpace\contractTestingExample-master"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\IntelijWorkSpace\customerprofile-pact-testing-example"/>
     <property name="java.vm.vendor" value="GraalVM Community"/>
     <property name="java.vendor.url" value="https://www.graalvm.org/"/>
     <property name="path.separator" value=";"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.script" value=""/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="user.dir" value="D:\IntelijWorkSpace\contractTestingExample-master"/>
+    <property name="user.dir" value="D:\IntelijWorkSpace\customerprofile-pact-testing-example"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.runtime.version" value="11.0.17+8-jvmci-22.3-b08"/>
@@ -43,9 +43,10 @@
     <property name="java.specification.version" value="11"/>
     <property name="java.class.path" value="C:\Program Files\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="user.name" value="prade"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="debug"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher verify pact:publish --debug"/>
     <property name="java.home" value="D:\softwares\graalvm-ce-java11-22.3.0"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -65,22 +66,154 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="initializationError" classname="com.contracttest.pact.CustomerProfileProviderPactTest" time="0">
-    <error message="Did not find any pact files for provider customerProfileProvider" type="java.lang.Exception"><![CDATA[java.lang.Exception: Did not find any pact files for provider customerProfileProvider
-	at org.junit.runners.model.InitializationError.<init>(InitializationError.java:38)
-	at au.com.dius.pact.provider.junit.PactRunner.<init>(PactRunner.kt:86)
-	at au.com.dius.pact.provider.junit.RestPactRunner.<init>(RestPactRunner.kt:7)
-	at au.com.dius.pact.provider.spring.SpringRestPactRunner.<init>(SpringRestPactRunner.kt:16)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
-	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
-	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
-	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
-	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
-	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+  <testcase name="customerProfileConsumer - A contact request for customer Profile" classname="com.contracttest.pact.CustomerProfileProviderPactTest" time="3.175">
+    <failure message="&#10;0 - $ -&gt; [{mismatch=Expected a Map with at least 8 elements but received 5 elements, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected originatingAppId=&apos;BookMyShow&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected phoneNumber=&apos;8907865478&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected emailAddress=&apos;xyz.abc@gmail.com&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected lastName=&apos;Rajkumar&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected firstName=&apos;Punith&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected customerNumber=&apos;684088275&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected customerCompanyNumber=&apos;111&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}, {mismatch=Expected ssn=&apos;1234578&apos; but was missing, diff={&#10;-    &quot;originatingAppId&quot;: &quot;BookMyShow&quot;,&#10;-    &quot;phoneNumber&quot;: &quot;8907865478&quot;,&#10;-    &quot;emailAddress&quot;: &quot;xyz.abc@gmail.com&quot;,&#10;-    &quot;lastName&quot;: &quot;Rajkumar&quot;,&#10;-    &quot;firstName&quot;: &quot;Punith&quot;,&#10;-    &quot;customerNumber&quot;: &quot;684088275&quot;,&#10;-    &quot;customerCompanyNumber&quot;: &quot;111&quot;,&#10;-    &quot;ssn&quot;: &quot;1234578&quot;&#10;+    &quot;path&quot;: &quot;/getCustomerProfile&quot;,&#10;+    &quot;timestamp&quot;: 1679243178089,&#10;+    &quot;error&quot;: &quot;Not Found&quot;,&#10;+    &quot;status&quot;: 404,&#10;+    &quot;message&quot;: &quot;No message available&quot;&#10;}}]&#10;1 - assert expectedStatus == actualStatus&#10;           |              |  |&#10;           200            |  404&#10;                          false&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 
+0 - $ -> [{mismatch=Expected a Map with at least 8 elements but received 5 elements, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected originatingAppId='BookMyShow' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected phoneNumber='8907865478' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected emailAddress='xyz.abc@gmail.com' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected lastName='Rajkumar' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected firstName='Punith' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected customerNumber='684088275' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected customerCompanyNumber='111' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}, {mismatch=Expected ssn='1234578' but was missing, diff={
+-    "originatingAppId": "BookMyShow",
+-    "phoneNumber": "8907865478",
+-    "emailAddress": "xyz.abc@gmail.com",
+-    "lastName": "Rajkumar",
+-    "firstName": "Punith",
+-    "customerNumber": "684088275",
+-    "customerCompanyNumber": "111",
+-    "ssn": "1234578"
++    "path": "/getCustomerProfile",
++    "timestamp": 1679243178089,
++    "error": "Not Found",
++    "status": 404,
++    "message": "No message available"
+}}]
+1 - assert expectedStatus == actualStatus
+           |              |  |
+           200            |  404
+                          false
+
+	at au.com.dius.pact.provider.junit.target.BaseTarget.getAssertionError(BaseTarget.java:90)
+	at au.com.dius.pact.provider.junit.target.HttpTarget.testInteraction(HttpTarget.java:125)
+	at au.com.dius.pact.provider.junit.InteractionRunner$2.evaluate(InteractionRunner.java:236)
+	at au.com.dius.pact.provider.junit.InteractionRunner.run(InteractionRunner.java:168)
+	at au.com.dius.pact.provider.junit.PactRunner.runChild(PactRunner.kt:123)
+	at au.com.dius.pact.provider.junit.PactRunner.runChild(PactRunner.kt:51)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
@@ -88,6 +221,621 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]></error>
+</failure>
+    <system-out><![CDATA[21:56:14.246 [main] DEBUG au.com.dius.pact.provider.junit.loader.PactBrokerLoader - Loading pacts from pact broker for provider customerProfileProvider and tag latest
+21:56:14.483 [main] DEBUG au.com.dius.pact.pactbroker.HalClientBase - Fetching: /
+21:56:14.763 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:56:14.768 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:56:14.769 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:80][total kept alive: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+21:56:14.777 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:80][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:14.778 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:80
+21:56:14.784 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:80
+21:56:14.799 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:61519<->127.0.0.1:80
+21:56:14.799 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET / HTTP/1.1
+21:56:14.799 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:56:14.799 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:56:14.800 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> GET / HTTP/1.1
+21:56:14.801 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json
+21:56:14.801 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/hal+json, application/json
+21:56:14.801 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: localhost:80
+21:56:14.801 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+21:56:14.801 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)
+21:56:14.801 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET / HTTP/1.1[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/hal+json, application/json[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: localhost:80[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:56:14.801 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 4160[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Status: 200 OK[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Sun, 19 Mar 2023 16:26:14 GMT[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+21:56:14.807 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Version: 2.102.2[\r][\n]"
+21:56:14.808 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Phusion Passenger(R) 6.0.12[\r][\n]"
+21:56:14.808 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+21:56:14.808 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"_links":{"self":{"href":"http://localhost","title":"Index","templated":false},"pb:publish-pact":{"href":"http://localhost/pacts/provider/{provider}/consumer/{consumer}/version/{consumerApplicationVersion}","title":"Publish a pact","templated":true},"pb:publish-contracts":{"href":"http://localhost/contracts/publish","title":"Publish contracts","templated":false},"pb:latest-pact-versions":{"href":"http://localhost/pacts/latest","title":"Latest pact versions","templated":false},"pb:tagged-pact-versions":{"href":"http://localhost/pacts/provider/{provider}/consumer/{consumer}/tag/{tag}","title":"All versions of a pact for a given consumer, provider and consumer version tag","templated":false},"pb:pacticipants":{"href":"http://localhost/pacticipants","title":"Pacticipants","templated":false},"pb:pacticipant":{"href":"http://localhost/pacticipants/{pacticipant}","title":"Fetch pacticipant by name","templated":true},"pb:latest-provider-pacts":{"href":"http://localhost/pacts/provider/{provider}/latest","title":"Latest pacts by provider","templated":true},"pb:latest-provider-pacts-with-tag":{"href":"http://localhost/pacts/provider/{provider}/latest/{tag}","title":"Latest pacts for provider with the specified tag","templated":true},"pb:provider-pacts-with-tag":{"href":"http://localhost/pacts/provider/{provider}/tag/{tag}","title":"All pact versions for the provider with the specified consumer version tag","templated":true},"pb:provider-pacts":{"href":"http://localhost/pacts/provider/{provider}","title":"All pact versions for the specified provider","templated":true},"pb:latest-version":{"href":"http://localhost/pacticipants/{pacticipant}/latest-version","title":"Latest pacticipant version","templated":true},"pb:latest-tagged-version":{"href":"http://localhost/pacticipants/{pacticipant}/latest-version/{tag}","title":"Latest pacticipant version with the specified tag","templated":true},"pb:webhooks":{"href":"http://localhost/webhooks","title":"Webhooks","templated":false},"pb:webhook":{"href":"http://localhost/webhooks/{uuid}","title":"Webhook","templated":true},"pb:integrations":{"href":"http://localhost/integrations","title":"Integrations","templated":false},"pb:pacticipant-version-tag":{"href":"http://localhost/pacticipants/{pacticipant}/versions/{version}/tags/{tag}","title":"Get, create or delete a tag for a pacticipant version","templated":true},"pb:pacticipant-branch-version":{"href":"http://localhost/pacticipants/{pacticipant}/branches/{branch}/versions/{version}","title":"Get or add/create a pacticipant version for a branch","templated":true},"pb:pacticipant-version":{"href":"http://localhost/pacticipants/{pacticipant}/versions/{version}","title":"Get, create or delete a pacticipant version","templated":true},"pb:metrics":{"href":"http://localhost/metrics","title":"Get Pact Broker metrics"},"pb:can-i-deploy-pacticipant-version-to-tag":{"href":"http://localhost/can-i-deploy?pacticipant={pacticipant}&version={version}&to={tag}","title":"Determine if an application version can be safely deployed to an environment identified by the given tag","templated":true},"pb:can-i-deploy-pacticipant-version-to-environment":{"href":"http://localhost/can-i-deploy?pacticipant={pacticipant}&version={version}&environment={environment}","title":"Determine if an application version can be safely deployed to an environment","templated":true},"pb:provider-pacts-for-verification":{"href":"http://localhost/pacts/provider/{provider}/for-verification","title":"Pact versions to be verified for the specified provider","templated":true},"beta:provider-pacts-for-verification":{"name":"beta","href":"http://localhost/pacts/provider/{provider}/for-verification","title":"DEPRECATED - please use pb:provider-pacts-for-verificati"
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/hal+json;charset=utf-8
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 4160
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Status: 200 OK
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Sun, 19 Mar 2023 16:26:14 GMT
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Version: 2.102.2
+21:56:14.810 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Powered-By: Phusion Passenger(R) 6.0.12
+21:56:14.813 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:56:14.817 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "on","templated":true},"curies":[{"name":"pb","href":"http://localhost/doc/{rel}?context=index","templated":true},{"name":"beta","href":"http://localhost/doc/{rel}?context=index","templated":true}],"pb:environments":{"title":"Environments","href":"http://localhost/environments","templated":false},"pb:environment":{"title":"Environment","href":"http://localhost/environments/{uuid}","templated":true}}}"
+21:56:14.817 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://localhost:80] can be kept alive indefinitely
+21:56:14.817 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+21:56:14.817 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:14.845 [main] DEBUG au.com.dius.pact.pactbroker.HalClientBase - Fetching: http://localhost/pacts/provider/customerProfileProvider/latest
+21:56:14.845 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:56:14.845 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:56:14.845 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:14.845 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:80][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:14.845 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+21:56:14.845 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /pacts/provider/customerProfileProvider/latest HTTP/1.1
+21:56:14.845 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:56:14.845 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> GET /pacts/provider/customerProfileProvider/latest HTTP/1.1
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/hal+json, application/json
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: localhost
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)
+21:56:14.845 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET /pacts/provider/customerProfileProvider/latest HTTP/1.1[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/hal+json, application/json[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: localhost[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:56:14.845 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 967[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Status: 200 OK[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Sun, 19 Mar 2023 16:26:14 GMT[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Version: 2.102.2[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Powered-By: Phusion Passenger(R) 6.0.12[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+21:56:14.859 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"_links":{"self":{"href":"http://localhost/pacts/provider/customerProfileProvider/latest","title":"Latest pact versions for the provider customerProfileProvider"},"pb:provider":{"href":"http://localhost/pacticipants/customerProfileProvider","name":"customerProfileProvider"},"pb:pacts":[{"href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0","title":"Pact between customerProfileConsumer (1.0) and customerProfileProvider","name":"customerProfileConsumer"}],"provider":{"href":"http://localhost/pacticipants/customerProfileProvider","title":"customerProfileProvider","name":"DEPRECATED - please use the pb:provider relation"},"pacts":[{"href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0","title":"DEPRECATED - please use the pb:pacts relation. Pact between customerProfileConsumer (1.0) and customerProfileProvider","name":"customerProfileConsumer"}]}}"
+21:56:14.859 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/hal+json;charset=utf-8
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 967
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Status: 200 OK
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Sun, 19 Mar 2023 16:26:14 GMT
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Version: 2.102.2
+21:56:14.860 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Powered-By: Phusion Passenger(R) 6.0.12
+21:56:14.860 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:56:14.860 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://localhost:80] can be kept alive indefinitely
+21:56:14.860 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+21:56:14.860 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.012 [main] DEBUG au.com.dius.pact.pactbroker.HalClientBase - Fetching: http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0
+21:56:15.013 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:56:15.013 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:56:15.013 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:80][total kept alive: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+21:56:15.013 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {}->http://localhost:80][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.013 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:80
+21:56:15.014 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:80
+21:56:15.014 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:61520<->127.0.0.1:80
+21:56:15.014 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0 HTTP/1.1
+21:56:15.014 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:56:15.014 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> GET /pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0 HTTP/1.1
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> Content-Type: application/json
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept: application/hal+json, application/json
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> Host: localhost
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> Connection: Keep-Alive
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)
+21:56:15.015 [main] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "GET /pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0 HTTP/1.1[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "Content-Type: application/json[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept: application/hal+json, application/json[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "Host: localhost[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:56:15.015 [main] DEBUG org.apache.http.wire - http-outgoing-1 >> "[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "HTTP/1.1 200 OK[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Length: 4886[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Status: 200 OK[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Date: Sun, 19 Mar 2023 16:26:15 GMT[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Accept[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Content-Type-Options: nosniff[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pact-Broker-Version: 2.102.2[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Powered-By: Phusion Passenger(R) 6.0.12[\r][\n]"
+21:56:15.026 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "[\r][\n]"
+21:56:15.027 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "{"provider":{"name":"customerProfileProvider"},"consumer":{"name":"customerProfileConsumer"},"interactions":[{"_id":"7cf6fb30026df578999aa13e7ebf07bc8e3cfb67","description":"A contact request for customer Profile","request":{"method":"GET","path":"/getCustomerProfile"},"response":{"status":200,"headers":{"Content-Type":"application/json;charset=UTF-8"},"body":{"customerCompanyNumber":"111","customerNumber":"684088275","emailAddress":"xyz.abc@gmail.com","firstName":"Punith","lastName":"Rajkumar","originatingAppId":"BookMyShow","phoneNumber":"8907865478","ssn":"1234578"},"matchingRules":{"header":{"Content-Type":{"matchers":[{"match":"regex","regex":"application/json;charset=UTF-8"}],"combine":"AND"}}}}}],"metadata":{"pact-specification":{"version":"3.0.0"},"pact-jvm":{"version":"3.5.13"}},"createdAt":"2023-03-19T16:22:10+00:00","_links":{"self":{"title":"Pact","name":"Pact between customerProfileConsumer (1.0) and customerProfileProvider","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0"},"pb:consumer":{"title":"Consumer","name":"customerProfileConsumer","href":"http://localhost/pacticipants/customerProfileConsumer"},"pb:consumer-version":{"title":"Consumer version","name":"1.0","href":"http://localhost/pacticipants/customerProfileConsumer/versions/1.0"},"pb:provider":{"title":"Provider","name":"customerProfileProvider","href":"http://localhost/pacticipants/customerProfileProvider"},"pb:pact-version":{"title":"Pact content version permalink","name":"9be32b3b98a6c75ceed11e265b057b11dee3c466","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466"},"pb:latest-pact-version":{"title":"Latest version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/latest"},"pb:all-pact-versions":{"title":"All versions of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/versions"},"pb:latest-untagged-pact-version":{"title":"Latest untagged version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/latest-untagged"},"pb:latest-tagged-pact-version":{"title":"Latest tagged version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/latest/{tag}","templated":true},"pb:previous-distinct":{"title":"Previous distinct version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0/previous-distinct"},"pb:diff-previous-distinct":{"title":"Diff with previous distinct version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0/diff/previous-distinct"},"pb:diff":{"title":"Diff with another specified version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466/diff/pact-version/{pactVersion}","templated":true},"pb:pact-webhooks":{"title":"Webhooks for the pact between customerProfileConsumer and customerProfileProvider","href":"http://localhost/webhooks/provider/customerProfileProvider/consumer/customerProfileConsumer"},"pb:consumer-webhooks":{"title":"Webhooks for all pacts with provider customerProfileProvider","href":"http://localhost/webhooks/consumer/customerProfileProvider"},"pb:tag-prod-version":{"title":"PUT to this resource to tag this consumer version as 'production'","href":"http://localhost/pacticipants/customerProfileConsumer/versions/1.0/tags/prod"},"pb:tag-version":{"title":"P"
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << HTTP/1.1 200 OK
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Type: application/hal+json;charset=utf-8
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Length: 4886
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Connection: keep-alive
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Status: 200 OK
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Date: Sun, 19 Mar 2023 16:26:15 GMT
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Accept
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << X-Content-Type-Options: nosniff
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pact-Broker-Version: 2.102.2
+21:56:15.027 [main] DEBUG org.apache.http.headers - http-outgoing-1 << X-Powered-By: Phusion Passenger(R) 6.0.12
+21:56:15.027 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:56:15.027 [main] DEBUG org.apache.http.wire - http-outgoing-1 << "UT to this resource to tag this consumer version","href":"http://localhost/pacticipants/customerProfileConsumer/versions/1.0/tags/{tag}"},"pb:publish-verification-results":{"title":"Publish verification results","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466/verification-results"},"pb:latest-verification-results":{"href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466/verification-results/latest"},"pb:triggered-webhooks":{"title":"Webhooks triggered by the publication of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0/triggered-webhooks"},"pb:matrix-for-consumer-version":{"title":"View matrix rows for the consumer version to which this pact belongs","href":"http://localhost/matrix?q[][pacticipant]=customerProfileConsumer&q[][version]=1.0&latestby=cvpv"},"curies":[{"name":"pb","href":"http://localhost/doc/{rel}?context=pact","templated":true}]}}"
+21:56:15.027 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 1][route: {}->http://localhost:80] can be kept alive indefinitely
+21:56:15.027 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: set socket timeout to 0
+21:56:15.027 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.205 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+21:56:15.221 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+21:56:15.222 [Finalizer] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: Close connection
+21:56:15.230 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+21:56:15.230 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+21:56:15.230 [Finalizer] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+21:56:15.231 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+21:56:15.237 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+21:56:15.248 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.contracttest.pact.CustomerProfileProviderPactTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+21:56:15.256 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.contracttest.pact.CustomerProfileProviderPactTest], using SpringBootContextLoader
+21:56:15.258 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.contracttest.pact.CustomerProfileProviderPactTest]: class path resource [com/contracttest/pact/CustomerProfileProviderPactTest-context.xml] does not exist
+21:56:15.258 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.contracttest.pact.CustomerProfileProviderPactTest]: class path resource [com/contracttest/pact/CustomerProfileProviderPactTestContext.groovy] does not exist
+21:56:15.258 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.contracttest.pact.CustomerProfileProviderPactTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+21:56:15.287 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.contracttest.pact.CustomerProfileProviderPactTest]
+21:56:15.291 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.contracttest.pact.CustomerProfileProviderPactTest]: using defaults.
+21:56:15.295 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+21:56:15.303 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+21:56:15.304 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+21:56:15.304 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e15bb06, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6778aea6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4e1ce44, org.springframework.test.context.support.DirtiesContextTestExecutionListener@69228e85, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a7cc52c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5853495b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@524a2ffb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2f61d591, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@332820f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7173ae5b]
+21:56:15.333 [main] DEBUG au.com.dius.pact.provider.junit.loader.PactBrokerLoader - Loading pacts from pact broker for provider customerProfileProvider and tag latest
+21:56:15.334 [main] DEBUG au.com.dius.pact.pactbroker.HalClientBase - Fetching: /
+21:56:15.335 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:56:15.335 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:56:15.335 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:80][total kept alive: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+21:56:15.335 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {}->http://localhost:80][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.335 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:80
+21:56:15.335 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:80
+21:56:15.336 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:61521<->127.0.0.1:80
+21:56:15.337 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET / HTTP/1.1
+21:56:15.337 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:56:15.337 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> GET / HTTP/1.1
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Content-Type: application/json
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Accept: application/hal+json, application/json
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Host: localhost:80
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Connection: Keep-Alive
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)
+21:56:15.337 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Accept-Encoding: gzip,deflate
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "GET / HTTP/1.1[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Content-Type: application/json[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Accept: application/hal+json, application/json[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Host: localhost:80[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Connection: Keep-Alive[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:56:15.337 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "[\r][\n]"
+21:56:15.343 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "HTTP/1.1 200 OK[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Content-Length: 4160[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Connection: keep-alive[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Status: 200 OK[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Date: Sun, 19 Mar 2023 16:26:15 GMT[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Vary: Accept[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Content-Type-Options: nosniff[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Pact-Broker-Version: 2.102.2[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Powered-By: Phusion Passenger(R) 6.0.12[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "[\r][\n]"
+21:56:15.344 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "{"_links":{"self":{"href":"http://localhost","title":"Index","templated":false},"pb:publish-pact":{"href":"http://localhost/pacts/provider/{provider}/consumer/{consumer}/version/{consumerApplicationVersion}","title":"Publish a pact","templated":true},"pb:publish-contracts":{"href":"http://localhost/contracts/publish","title":"Publish contracts","templated":false},"pb:latest-pact-versions":{"href":"http://localhost/pacts/latest","title":"Latest pact versions","templated":false},"pb:tagged-pact-versions":{"href":"http://localhost/pacts/provider/{provider}/consumer/{consumer}/tag/{tag}","title":"All versions of a pact for a given consumer, provider and consumer version tag","templated":false},"pb:pacticipants":{"href":"http://localhost/pacticipants","title":"Pacticipants","templated":false},"pb:pacticipant":{"href":"http://localhost/pacticipants/{pacticipant}","title":"Fetch pacticipant by name","templated":true},"pb:latest-provider-pacts":{"href":"http://localhost/pacts/provider/{provider}/latest","title":"Latest pacts by provider","templated":true},"pb:latest-provider-pacts-with-tag":{"href":"http://localhost/pacts/provider/{provider}/latest/{tag}","title":"Latest pacts for provider with the specified tag","templated":true},"pb:provider-pacts-with-tag":{"href":"http://localhost/pacts/provider/{provider}/tag/{tag}","title":"All pact versions for the provider with the specified consumer version tag","templated":true},"pb:provider-pacts":{"href":"http://localhost/pacts/provider/{provider}","title":"All pact versions for the specified provider","templated":true},"pb:latest-version":{"href":"http://localhost/pacticipants/{pacticipant}/latest-version","title":"Latest pacticipant version","templated":true},"pb:latest-tagged-version":{"href":"http://localhost/pacticipants/{pacticipant}/latest-version/{tag}","title":"Latest pacticipant version with the specified tag","templated":true},"pb:webhooks":{"href":"http://localhost/webhooks","title":"Webhooks","templated":false},"pb:webhook":{"href":"http://localhost/webhooks/{uuid}","title":"Webhook","templated":true},"pb:integrations":{"href":"http://localhost/integrations","title":"Integrations","templated":false},"pb:pacticipant-version-tag":{"href":"http://localhost/pacticipants/{pacticipant}/versions/{version}/tags/{tag}","title":"Get, create or delete a tag for a pacticipant version","templated":true},"pb:pacticipant-branch-version":{"href":"http://localhost/pacticipants/{pacticipant}/branches/{branch}/versions/{version}","title":"Get or add/create a pacticipant version for a branch","templated":true},"pb:pacticipant-version":{"href":"http://localhost/pacticipants/{pacticipant}/versions/{version}","title":"Get, create or delete a pacticipant version","templated":true},"pb:metrics":{"href":"http://localhost/metrics","title":"Get Pact Broker metrics"},"pb:can-i-deploy-pacticipant-version-to-tag":{"href":"http://localhost/can-i-deploy?pacticipant={pacticipant}&version={version}&to={tag}","title":"Determine if an application version can be safely deployed to an environment identified by the given tag","templated":true},"pb:can-i-deploy-pacticipant-version-to-environment":{"href":"http://localhost/can-i-deploy?pacticipant={pacticipant}&version={version}&environment={environment}","title":"Determine if an application version can be safely deployed to an environment","templated":true},"pb:provider-pacts-for-verification":{"href":"http://localhost/pacts/provider/{provider}/for-verification","title":"Pact versions to be verified for the specified provider","templated":true},"beta:provider-pacts-for-verification":{"name":"beta","href":"http://localhost/pacts/provider/{provider}/for-verification","title":"DEPRECATED - please use pb:provider-pacts-for-verificati"
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << HTTP/1.1 200 OK
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Content-Type: application/hal+json;charset=utf-8
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Content-Length: 4160
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Connection: keep-alive
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Status: 200 OK
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Date: Sun, 19 Mar 2023 16:26:15 GMT
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Vary: Accept
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << X-Content-Type-Options: nosniff
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << X-Pact-Broker-Version: 2.102.2
+21:56:15.344 [main] DEBUG org.apache.http.headers - http-outgoing-2 << X-Powered-By: Phusion Passenger(R) 6.0.12
+21:56:15.344 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:56:15.345 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "on","templated":true},"curies":[{"name":"pb","href":"http://localhost/doc/{rel}?context=index","templated":true},{"name":"beta","href":"http://localhost/doc/{rel}?context=index","templated":true}],"pb:environments":{"title":"Environments","href":"http://localhost/environments","templated":false},"pb:environment":{"title":"Environment","href":"http://localhost/environments/{uuid}","templated":true}}}"
+21:56:15.345 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 2][route: {}->http://localhost:80] can be kept alive indefinitely
+21:56:15.345 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: set socket timeout to 0
+21:56:15.345 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.346 [main] DEBUG au.com.dius.pact.pactbroker.HalClientBase - Fetching: http://localhost/pacts/provider/customerProfileProvider/latest
+21:56:15.346 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:56:15.346 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:56:15.346 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.347 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {}->http://localhost:80][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.347 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: set socket timeout to 0
+21:56:15.347 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /pacts/provider/customerProfileProvider/latest HTTP/1.1
+21:56:15.347 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:56:15.347 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> GET /pacts/provider/customerProfileProvider/latest HTTP/1.1
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Content-Type: application/json
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Accept: application/hal+json, application/json
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Host: localhost
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Connection: Keep-Alive
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)
+21:56:15.347 [main] DEBUG org.apache.http.headers - http-outgoing-2 >> Accept-Encoding: gzip,deflate
+21:56:15.347 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "GET /pacts/provider/customerProfileProvider/latest HTTP/1.1[\r][\n]"
+21:56:15.347 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Content-Type: application/json[\r][\n]"
+21:56:15.348 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Accept: application/hal+json, application/json[\r][\n]"
+21:56:15.348 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Host: localhost[\r][\n]"
+21:56:15.348 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Connection: Keep-Alive[\r][\n]"
+21:56:15.348 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)[\r][\n]"
+21:56:15.348 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:56:15.348 [main] DEBUG org.apache.http.wire - http-outgoing-2 >> "[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "HTTP/1.1 200 OK[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Content-Length: 967[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Connection: keep-alive[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Status: 200 OK[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Date: Sun, 19 Mar 2023 16:26:15 GMT[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Vary: Accept[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Content-Type-Options: nosniff[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Pact-Broker-Version: 2.102.2[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Powered-By: Phusion Passenger(R) 6.0.12[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "[\r][\n]"
+21:56:15.362 [main] DEBUG org.apache.http.wire - http-outgoing-2 << "{"_links":{"self":{"href":"http://localhost/pacts/provider/customerProfileProvider/latest","title":"Latest pact versions for the provider customerProfileProvider"},"pb:provider":{"href":"http://localhost/pacticipants/customerProfileProvider","name":"customerProfileProvider"},"pb:pacts":[{"href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0","title":"Pact between customerProfileConsumer (1.0) and customerProfileProvider","name":"customerProfileConsumer"}],"provider":{"href":"http://localhost/pacticipants/customerProfileProvider","title":"customerProfileProvider","name":"DEPRECATED - please use the pb:provider relation"},"pacts":[{"href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0","title":"DEPRECATED - please use the pb:pacts relation. Pact between customerProfileConsumer (1.0) and customerProfileProvider","name":"customerProfileConsumer"}]}}"
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << HTTP/1.1 200 OK
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Content-Type: application/hal+json;charset=utf-8
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Content-Length: 967
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Connection: keep-alive
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Status: 200 OK
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Date: Sun, 19 Mar 2023 16:26:15 GMT
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Vary: Accept
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << X-Content-Type-Options: nosniff
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << X-Pact-Broker-Version: 2.102.2
+21:56:15.363 [main] DEBUG org.apache.http.headers - http-outgoing-2 << X-Powered-By: Phusion Passenger(R) 6.0.12
+21:56:15.363 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:56:15.363 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 2][route: {}->http://localhost:80] can be kept alive indefinitely
+21:56:15.363 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: set socket timeout to 0
+21:56:15.363 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.364 [main] DEBUG au.com.dius.pact.pactbroker.HalClientBase - Fetching: http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0
+21:56:15.365 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+21:56:15.366 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+21:56:15.366 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:80][total kept alive: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+21:56:15.366 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {}->http://localhost:80][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.366 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:80
+21:56:15.366 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:80
+21:56:15.366 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:61522<->127.0.0.1:80
+21:56:15.367 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0 HTTP/1.1
+21:56:15.367 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+21:56:15.367 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> GET /pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0 HTTP/1.1
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Content-Type: application/json
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept: application/hal+json, application/json
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Host: localhost
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)
+21:56:15.367 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "GET /pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0 HTTP/1.1[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Content-Type: application/json[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept: application/hal+json, application/json[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Host: localhost[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.17)[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+21:56:15.367 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "HTTP/1.1 200 OK[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Length: 4886[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Connection: keep-alive[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Status: 200 OK[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Date: Sun, 19 Mar 2023 16:26:15 GMT[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Accept[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "X-Content-Type-Options: nosniff[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "X-Pact-Broker-Version: 2.102.2[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "X-Powered-By: Phusion Passenger(R) 6.0.12[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
+21:56:15.378 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "{"provider":{"name":"customerProfileProvider"},"consumer":{"name":"customerProfileConsumer"},"interactions":[{"_id":"7cf6fb30026df578999aa13e7ebf07bc8e3cfb67","description":"A contact request for customer Profile","request":{"method":"GET","path":"/getCustomerProfile"},"response":{"status":200,"headers":{"Content-Type":"application/json;charset=UTF-8"},"body":{"customerCompanyNumber":"111","customerNumber":"684088275","emailAddress":"xyz.abc@gmail.com","firstName":"Punith","lastName":"Rajkumar","originatingAppId":"BookMyShow","phoneNumber":"8907865478","ssn":"1234578"},"matchingRules":{"header":{"Content-Type":{"matchers":[{"match":"regex","regex":"application/json;charset=UTF-8"}],"combine":"AND"}}}}}],"metadata":{"pact-specification":{"version":"3.0.0"},"pact-jvm":{"version":"3.5.13"}},"createdAt":"2023-03-19T16:22:10+00:00","_links":{"self":{"title":"Pact","name":"Pact between customerProfileConsumer (1.0) and customerProfileProvider","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0"},"pb:consumer":{"title":"Consumer","name":"customerProfileConsumer","href":"http://localhost/pacticipants/customerProfileConsumer"},"pb:consumer-version":{"title":"Consumer version","name":"1.0","href":"http://localhost/pacticipants/customerProfileConsumer/versions/1.0"},"pb:provider":{"title":"Provider","name":"customerProfileProvider","href":"http://localhost/pacticipants/customerProfileProvider"},"pb:pact-version":{"title":"Pact content version permalink","name":"9be32b3b98a6c75ceed11e265b057b11dee3c466","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466"},"pb:latest-pact-version":{"title":"Latest version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/latest"},"pb:all-pact-versions":{"title":"All versions of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/versions"},"pb:latest-untagged-pact-version":{"title":"Latest untagged version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/latest-untagged"},"pb:latest-tagged-pact-version":{"title":"Latest tagged version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/latest/{tag}","templated":true},"pb:previous-distinct":{"title":"Previous distinct version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0/previous-distinct"},"pb:diff-previous-distinct":{"title":"Diff with previous distinct version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0/diff/previous-distinct"},"pb:diff":{"title":"Diff with another specified version of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466/diff/pact-version/{pactVersion}","templated":true},"pb:pact-webhooks":{"title":"Webhooks for the pact between customerProfileConsumer and customerProfileProvider","href":"http://localhost/webhooks/provider/customerProfileProvider/consumer/customerProfileConsumer"},"pb:consumer-webhooks":{"title":"Webhooks for all pacts with provider customerProfileProvider","href":"http://localhost/webhooks/consumer/customerProfileProvider"},"pb:tag-prod-version":{"title":"PUT to this resource to tag this consumer version as 'production'","href":"http://localhost/pacticipants/customerProfileConsumer/versions/1.0/tags/prod"},"pb:tag-version":{"title":"P"
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << HTTP/1.1 200 OK
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Type: application/hal+json;charset=utf-8
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Length: 4886
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Connection: keep-alive
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Status: 200 OK
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Date: Sun, 19 Mar 2023 16:26:15 GMT
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Accept
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << X-Content-Type-Options: nosniff
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << X-Pact-Broker-Version: 2.102.2
+21:56:15.379 [main] DEBUG org.apache.http.headers - http-outgoing-3 << X-Powered-By: Phusion Passenger(R) 6.0.12
+21:56:15.379 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+21:56:15.379 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "UT to this resource to tag this consumer version","href":"http://localhost/pacticipants/customerProfileConsumer/versions/1.0/tags/{tag}"},"pb:publish-verification-results":{"title":"Publish verification results","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466/verification-results"},"pb:latest-verification-results":{"href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/pact-version/9be32b3b98a6c75ceed11e265b057b11dee3c466/verification-results/latest"},"pb:triggered-webhooks":{"title":"Webhooks triggered by the publication of this pact","href":"http://localhost/pacts/provider/customerProfileProvider/consumer/customerProfileConsumer/version/1.0/triggered-webhooks"},"pb:matrix-for-consumer-version":{"title":"View matrix rows for the consumer version to which this pact belongs","href":"http://localhost/matrix?q[][pacticipant]=customerProfileConsumer&q[][version]=1.0&latestby=cvpv"},"curies":[{"name":"pb","href":"http://localhost/doc/{rel}?context=pact","templated":true}]}}"
+21:56:15.379 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 3][route: {}->http://localhost:80] can be kept alive indefinitely
+21:56:15.379 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: set socket timeout to 0
+21:56:15.379 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {}->http://localhost:80][total kept alive: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+21:56:15.410 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+21:56:15.410 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+21:56:15.410 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.contracttest.pact.CustomerProfileProviderPactTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+21:56:15.411 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.contracttest.pact.CustomerProfileProviderPactTest], using SpringBootContextLoader
+21:56:15.411 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.contracttest.pact.CustomerProfileProviderPactTest]: class path resource [com/contracttest/pact/CustomerProfileProviderPactTest-context.xml] does not exist
+21:56:15.411 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.contracttest.pact.CustomerProfileProviderPactTest]: class path resource [com/contracttest/pact/CustomerProfileProviderPactTestContext.groovy] does not exist
+21:56:15.411 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.contracttest.pact.CustomerProfileProviderPactTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+21:56:15.417 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.contracttest.pact.CustomerProfileProviderPactTest]
+21:56:15.421 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.contracttest.pact.CustomerProfileProviderPactTest]: using defaults.
+21:56:15.425 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+21:56:15.428 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+21:56:15.429 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+21:56:15.429 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2af46afd, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@760245e1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@31ceba99, org.springframework.test.context.support.DirtiesContextTestExecutionListener@295bf2a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@bbf9e07, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6ff6efdc, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2b289ac9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4eb1c69, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@73d3e555, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2b037cfc]
+21:56:15.444 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+21:56:15.447 [Finalizer] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
+21:56:15.448 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+21:56:15.448 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+21:56:15.448 [Finalizer] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: Close connection
+21:56:15.449 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+21:56:15.453 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@a0f53fc testClass = CustomerProfileProviderPactTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3db972d2 testClass = CustomerProfileProviderPactTest, locations = '{}', classes = '{class com.contracttest.pact.CustomerProfileController, class com.contracttest.pact.CustomerProfileController}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@1debc91c key = [@au.com.dius.pact.provider.junit.loader.PactBroker(protocol="http", port="80", valueResolver=au.com.dius.pact.provider.junit.sysprops.SystemPropertyResolver.class, host="localhost", failIfNoPactsFound=true, tags={"${pactbroker.tags:latest}"}, authentication=@au.com.dius.pact.provider.junit.loader.PactBrokerAuth(scheme="${pactbroker.auth.scheme:basic}", username="${pactbroker.auth.username:}", password="${pactbroker.auth.password:}")), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.EnableAutoConfigurationImportSelector.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(exclude={}, excludeName={}), @au.com.dius.pact.provider.junit.loader.PactSource(value=au.com.dius.pact.provider.junit.loader.PactBrokerLoader.class), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.test.context.SpringBootTest(webEnvironment=DEFINED_PORT, value={}, properties={}, classes={com.contracttest.pact.CustomerProfileController.class}), @au.com.dius.pact.provider.junit.Provider(value="customerProfileProvider"), @org.junit.runner.RunWith(value=au.com.dius.pact.provider.spring.SpringRestPactRunner.class), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class)]], org.springframework.boot.test.context.SpringBootTestContextCustomizer@4e6f2bb5, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6cd166b8, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5fac521d, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@52d6cd34], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+21:56:15.458 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@a0f53fc testClass = CustomerProfileProviderPactTest, testInstance = com.contracttest.pact.CustomerProfileProviderPactTest@63b3ee82, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3db972d2 testClass = CustomerProfileProviderPactTest, locations = '{}', classes = '{class com.contracttest.pact.CustomerProfileController, class com.contracttest.pact.CustomerProfileController}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@1debc91c key = [@au.com.dius.pact.provider.junit.loader.PactBroker(protocol="http", port="80", valueResolver=au.com.dius.pact.provider.junit.sysprops.SystemPropertyResolver.class, host="localhost", failIfNoPactsFound=true, tags={"${pactbroker.tags:latest}"}, authentication=@au.com.dius.pact.provider.junit.loader.PactBrokerAuth(scheme="${pactbroker.auth.scheme:basic}", username="${pactbroker.auth.username:}", password="${pactbroker.auth.password:}")), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.EnableAutoConfigurationImportSelector.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(exclude={}, excludeName={}), @au.com.dius.pact.provider.junit.loader.PactSource(value=au.com.dius.pact.provider.junit.loader.PactBrokerLoader.class), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.test.context.SpringBootTest(webEnvironment=DEFINED_PORT, value={}, properties={}, classes={com.contracttest.pact.CustomerProfileController.class}), @au.com.dius.pact.provider.junit.Provider(value="customerProfileProvider"), @org.junit.runner.RunWith(value=au.com.dius.pact.provider.spring.SpringRestPactRunner.class), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class)]], org.springframework.boot.test.context.SpringBootTestContextCustomizer@4e6f2bb5, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6cd166b8, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5fac521d, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@52d6cd34], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]].
+21:56:15.498 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemProperties' with lowest search precedence
+21:56:15.498 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemEnvironment' with lowest search precedence
+21:56:15.498 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [MapPropertySource@783172425 {name='systemProperties', properties={sun.desktop=windows, awt.toolkit=sun.awt.windows.WToolkit, java.specification.version=11, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, java.class.path=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\test-classes;D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\classes;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-web\1.5.10.RELEASE\spring-boot-starter-web-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter\1.5.10.RELEASE\spring-boot-starter-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot\1.5.10.RELEASE\spring-boot-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\1.5.10.RELEASE\spring-boot-autoconfigure-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-logging\1.5.10.RELEASE\spring-boot-starter-logging-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\ch\qos\logback\logback-classic\1.1.11\logback-classic-1.1.11.jar;C:\Users\prade\.m2\repository\ch\qos\logback\logback-core\1.1.11\logback-core-1.1.11.jar;C:\Users\prade\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\prade\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\prade\.m2\repository\org\slf4j\log4j-over-slf4j\1.7.25\log4j-over-slf4j-1.7.25.jar;C:\Users\prade\.m2\repository\org\yaml\snakeyaml\1.17\snakeyaml-1.17.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\1.5.10.RELEASE\spring-boot-starter-tomcat-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.27\tomcat-embed-core-8.5.27.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\tomcat-annotations-api\8.5.27\tomcat-annotations-api-8.5.27.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.27\tomcat-embed-el-8.5.27.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.27\tomcat-embed-websocket-8.5.27.jar;C:\Users\prade\.m2\repository\org\hibernate\hibernate-validator\5.3.6.Final\hibernate-validator-5.3.6.Final.jar;C:\Users\prade\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\prade\.m2\repository\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;C:\Users\prade\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.10\jackson-databind-2.8.10.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.10\jackson-core-2.8.10.jar;C:\Users\prade\.m2\repository\org\springframework\spring-web\4.3.14.RELEASE\spring-web-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-aop\4.3.14.RELEASE\spring-aop-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-beans\4.3.14.RELEASE\spring-beans-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-context\4.3.14.RELEASE\spring-context-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-webmvc\4.3.14.RELEASE\spring-webmvc-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-expression\4.3.14.RELEASE\spring-expression-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-test\1.5.10.RELEASE\spring-boot-starter-test-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-test\1.5.10.RELEASE\spring-boot-test-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\1.5.10.RELEASE\spring-boot-test-autoconfigure-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\com\jayway\jsonpath\json-path\2.2.0\json-path-2.2.0.jar;C:\Users\prade\.m2\repository\net\minidev\json-smart\2.2.1\json-smart-2.2.1.jar;C:\Users\prade\.m2\repository\net\minidev\accessors-smart\1.1\accessors-smart-1.1.jar;C:\Users\prade\.m2\repository\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;C:\Users\prade\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\prade\.m2\repository\org\assertj\assertj-core\2.6.0\assertj-core-2.6.0.jar;C:\Users\prade\.m2\repository\org\mockito\mockito-core\1.10.19\mockito-core-1.10.19.jar;C:\Users\prade\.m2\repository\org\objenesis\objenesis\2.1\objenesis-2.1.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\prade\.m2\repository\org\skyscreamer\jsonassert\1.4.0\jsonassert-1.4.0.jar;C:\Users\prade\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\prade\.m2\repository\org\springframework\spring-core\4.3.14.RELEASE\spring-core-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-test\4.3.14.RELEASE\spring-test-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-provider-spring_2.11\3.5.13\pact-jvm-provider-spring_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jre8\1.2.0\kotlin-stdlib-jre8-1.2.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.2.0\kotlin-stdlib-1.2.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jre7\1.2.0\kotlin-stdlib-jre7-1.2.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-reflect\1.2.0\kotlin-reflect-1.2.0.jar;C:\Users\prade\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\prade\.m2\repository\org\codehaus\groovy\groovy-all\2.4.12\groovy-all-2.4.12-indy.jar;C:\Users\prade\.m2\repository\io\github\microutils\kotlin-logging\1.4.4\kotlin-logging-1.4.4.jar;C:\Users\prade\.m2\repository\org\scala-lang\scala-library\2.11.8\scala-library-2.11.8.jar;C:\Users\prade\.m2\repository\org\scala-lang\scala-compiler\2.11.8\scala-compiler-2.11.8.jar;C:\Users\prade\.m2\repository\org\scala-lang\scala-reflect\2.11.8\scala-reflect-2.11.8.jar;C:\Users\prade\.m2\repository\org\scala-lang\modules\scala-xml_2.11\1.0.4\scala-xml_2.11-1.0.4.jar;C:\Users\prade\.m2\repository\org\scala-lang\modules\scala-parser-combinators_2.11\1.0.4\scala-parser-combinators_2.11-1.0.4.jar;C:\Users\prade\.m2\repository\com\typesafe\scala-logging\scala-logging_2.11\3.4.0\scala-logging_2.11-3.4.0.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-provider-junit_2.11\3.5.13\pact-jvm-provider-junit_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-provider_2.11\3.5.13\pact-jvm-provider_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-model\3.5.13\pact-jvm-model-3.5.13.jar;C:\Users\prade\.m2\repository\org\json\json\20140107\json-20140107.jar;C:\Users\prade\.m2\repository\io\netty\netty-handler\4.1.9.Final\netty-handler-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-buffer\4.1.9.Final\netty-buffer-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-common\4.1.9.Final\netty-common-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-transport\4.1.9.Final\netty-transport-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-resolver\4.1.9.Final\netty-resolver-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-codec\4.1.9.Final\netty-codec-4.1.9.Final.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\httpmime\4.5.5\httpmime-4.5.5.jar;C:\Users\prade\.m2\repository\com\github\zafarkhaja\java-semver\0.9.0\java-semver-0.9.0.jar;C:\Users\prade\.m2\repository\com\amazonaws\aws-java-sdk-s3\1.11.30\aws-java-sdk-s3-1.11.30.jar;C:\Users\prade\.m2\repository\com\amazonaws\aws-java-sdk-kms\1.11.30\aws-java-sdk-kms-1.11.30.jar;C:\Users\prade\.m2\repository\com\amazonaws\aws-java-sdk-core\1.11.30\aws-java-sdk-core-1.11.30.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-cbor\2.8.10\jackson-dataformat-cbor-2.8.10.jar;C:\Users\prade\.m2\repository\com\amazonaws\jmespath-java\1.0\jmespath-java-1.0.jar;C:\Users\prade\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\prade\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\prade\.m2\repository\com\github\mifmif\generex\1.0.1\generex-1.0.1.jar;C:\Users\prade\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-pact-broker\3.5.13\pact-jvm-pact-broker-3.5.13.jar;C:\Users\prade\.m2\repository\com\github\salomonbrys\kotson\kotson\2.5.0\kotson-2.5.0.jar;C:\Users\prade\.m2\repository\org\dmfs\rfc3986-uri\0.8\rfc3986-uri-0.8.jar;C:\Users\prade\.m2\repository\org\dmfs\iterators\1.5\iterators-1.5.jar;C:\Users\prade\.m2\repository\org\dmfs\optional\0.3\optional-0.3.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-matchers_2.11\3.5.13\pact-jvm-matchers_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\io\gatling\jsonpath_2.11\0.6.9\jsonpath_2.11-0.6.9.jar;C:\Users\prade\.m2\repository\com\googlecode\java-diff-utils\diffutils\1.3.0\diffutils-1.3.0.jar;C:\Users\prade\.m2\repository\commons-io\commons-io\2.5\commons-io-2.5.jar;C:\Users\prade\.m2\repository\org\fusesource\jansi\jansi\1.16\jansi-1.16.jar;C:\Users\prade\.m2\repository\org\reflections\reflections\0.9.10\reflections-0.9.10.jar;C:\Users\prade\.m2\repository\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;C:\Users\prade\.m2\repository\com\google\code\findbugs\annotations\2.0.1\annotations-2.0.1.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\fluent-hc\4.5.3\fluent-hc-4.5.3.jar;C:\Users\prade\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\httpclient\4.5.5\httpclient-4.5.5.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\prade\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\prade\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\prade\.m2\repository\org\jooq\jool\0.9.11\jool-0.9.11.jar;C:\Users\prade\.m2\repository\com\github\rholder\guava-retrying\2.0.0\guava-retrying-2.0.0.jar;C:\Users\prade\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\prade\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\prade\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\prade\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\prade\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\prade\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\prade\.m2\repository\com\google\code\findbugs\jsr305\2.0.2\jsr305-2.0.2.jar;C:\Users\prade\.m2\repository\javax\mail\mail\1.5.0-b01\mail-1.5.0-b01.jar;C:\Users\prade\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\prade\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.8.10\jackson-datatype-joda-2.8.10.jar;C:\Users\prade\.m2\repository\joda-time\joda-time\2.9.9\joda-time-2.9.9.jar;, java.vm.vendor=GraalVM Community, sun.arch.data.model=64, user.variant=, java.vendor.url=https://www.graalvm.org/, user.timezone=Asia/Calcutta, os.name=Windows 11, java.vm.specification.version=11, sun.java.launcher=SUN_STANDARD, user.country=IN, sun.boot.library.path=D:\softwares\graalvm-ce-java11-22.3.0\bin, sun.java.command=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\surefire\surefirebooter10420175059496650444.jar D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\surefire\surefire8633725756827392567tmp D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\surefire\surefire_018341674502149418160tmp, jdk.debug=release, surefire.test.class.path=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\test-classes;D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\classes;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-web\1.5.10.RELEASE\spring-boot-starter-web-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter\1.5.10.RELEASE\spring-boot-starter-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot\1.5.10.RELEASE\spring-boot-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\1.5.10.RELEASE\spring-boot-autoconfigure-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-logging\1.5.10.RELEASE\spring-boot-starter-logging-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\ch\qos\logback\logback-classic\1.1.11\logback-classic-1.1.11.jar;C:\Users\prade\.m2\repository\ch\qos\logback\logback-core\1.1.11\logback-core-1.1.11.jar;C:\Users\prade\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\prade\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\prade\.m2\repository\org\slf4j\log4j-over-slf4j\1.7.25\log4j-over-slf4j-1.7.25.jar;C:\Users\prade\.m2\repository\org\yaml\snakeyaml\1.17\snakeyaml-1.17.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\1.5.10.RELEASE\spring-boot-starter-tomcat-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.27\tomcat-embed-core-8.5.27.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\tomcat-annotations-api\8.5.27\tomcat-annotations-api-8.5.27.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.27\tomcat-embed-el-8.5.27.jar;C:\Users\prade\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.27\tomcat-embed-websocket-8.5.27.jar;C:\Users\prade\.m2\repository\org\hibernate\hibernate-validator\5.3.6.Final\hibernate-validator-5.3.6.Final.jar;C:\Users\prade\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\prade\.m2\repository\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;C:\Users\prade\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.10\jackson-databind-2.8.10.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.10\jackson-core-2.8.10.jar;C:\Users\prade\.m2\repository\org\springframework\spring-web\4.3.14.RELEASE\spring-web-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-aop\4.3.14.RELEASE\spring-aop-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-beans\4.3.14.RELEASE\spring-beans-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-context\4.3.14.RELEASE\spring-context-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-webmvc\4.3.14.RELEASE\spring-webmvc-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-expression\4.3.14.RELEASE\spring-expression-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-starter-test\1.5.10.RELEASE\spring-boot-starter-test-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-test\1.5.10.RELEASE\spring-boot-test-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\1.5.10.RELEASE\spring-boot-test-autoconfigure-1.5.10.RELEASE.jar;C:\Users\prade\.m2\repository\com\jayway\jsonpath\json-path\2.2.0\json-path-2.2.0.jar;C:\Users\prade\.m2\repository\net\minidev\json-smart\2.2.1\json-smart-2.2.1.jar;C:\Users\prade\.m2\repository\net\minidev\accessors-smart\1.1\accessors-smart-1.1.jar;C:\Users\prade\.m2\repository\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;C:\Users\prade\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\prade\.m2\repository\org\assertj\assertj-core\2.6.0\assertj-core-2.6.0.jar;C:\Users\prade\.m2\repository\org\mockito\mockito-core\1.10.19\mockito-core-1.10.19.jar;C:\Users\prade\.m2\repository\org\objenesis\objenesis\2.1\objenesis-2.1.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\prade\.m2\repository\org\skyscreamer\jsonassert\1.4.0\jsonassert-1.4.0.jar;C:\Users\prade\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\prade\.m2\repository\org\springframework\spring-core\4.3.14.RELEASE\spring-core-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\springframework\spring-test\4.3.14.RELEASE\spring-test-4.3.14.RELEASE.jar;C:\Users\prade\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-provider-spring_2.11\3.5.13\pact-jvm-provider-spring_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jre8\1.2.0\kotlin-stdlib-jre8-1.2.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.2.0\kotlin-stdlib-1.2.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jre7\1.2.0\kotlin-stdlib-jre7-1.2.0.jar;C:\Users\prade\.m2\repository\org\jetbrains\kotlin\kotlin-reflect\1.2.0\kotlin-reflect-1.2.0.jar;C:\Users\prade\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\prade\.m2\repository\org\codehaus\groovy\groovy-all\2.4.12\groovy-all-2.4.12-indy.jar;C:\Users\prade\.m2\repository\io\github\microutils\kotlin-logging\1.4.4\kotlin-logging-1.4.4.jar;C:\Users\prade\.m2\repository\org\scala-lang\scala-library\2.11.8\scala-library-2.11.8.jar;C:\Users\prade\.m2\repository\org\scala-lang\scala-compiler\2.11.8\scala-compiler-2.11.8.jar;C:\Users\prade\.m2\repository\org\scala-lang\scala-reflect\2.11.8\scala-reflect-2.11.8.jar;C:\Users\prade\.m2\repository\org\scala-lang\modules\scala-xml_2.11\1.0.4\scala-xml_2.11-1.0.4.jar;C:\Users\prade\.m2\repository\org\scala-lang\modules\scala-parser-combinators_2.11\1.0.4\scala-parser-combinators_2.11-1.0.4.jar;C:\Users\prade\.m2\repository\com\typesafe\scala-logging\scala-logging_2.11\3.4.0\scala-logging_2.11-3.4.0.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-provider-junit_2.11\3.5.13\pact-jvm-provider-junit_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-provider_2.11\3.5.13\pact-jvm-provider_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-model\3.5.13\pact-jvm-model-3.5.13.jar;C:\Users\prade\.m2\repository\org\json\json\20140107\json-20140107.jar;C:\Users\prade\.m2\repository\io\netty\netty-handler\4.1.9.Final\netty-handler-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-buffer\4.1.9.Final\netty-buffer-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-common\4.1.9.Final\netty-common-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-transport\4.1.9.Final\netty-transport-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-resolver\4.1.9.Final\netty-resolver-4.1.9.Final.jar;C:\Users\prade\.m2\repository\io\netty\netty-codec\4.1.9.Final\netty-codec-4.1.9.Final.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\httpmime\4.5.5\httpmime-4.5.5.jar;C:\Users\prade\.m2\repository\com\github\zafarkhaja\java-semver\0.9.0\java-semver-0.9.0.jar;C:\Users\prade\.m2\repository\com\amazonaws\aws-java-sdk-s3\1.11.30\aws-java-sdk-s3-1.11.30.jar;C:\Users\prade\.m2\repository\com\amazonaws\aws-java-sdk-kms\1.11.30\aws-java-sdk-kms-1.11.30.jar;C:\Users\prade\.m2\repository\com\amazonaws\aws-java-sdk-core\1.11.30\aws-java-sdk-core-1.11.30.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-cbor\2.8.10\jackson-dataformat-cbor-2.8.10.jar;C:\Users\prade\.m2\repository\com\amazonaws\jmespath-java\1.0\jmespath-java-1.0.jar;C:\Users\prade\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\prade\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\prade\.m2\repository\com\github\mifmif\generex\1.0.1\generex-1.0.1.jar;C:\Users\prade\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-pact-broker\3.5.13\pact-jvm-pact-broker-3.5.13.jar;C:\Users\prade\.m2\repository\com\github\salomonbrys\kotson\kotson\2.5.0\kotson-2.5.0.jar;C:\Users\prade\.m2\repository\org\dmfs\rfc3986-uri\0.8\rfc3986-uri-0.8.jar;C:\Users\prade\.m2\repository\org\dmfs\iterators\1.5\iterators-1.5.jar;C:\Users\prade\.m2\repository\org\dmfs\optional\0.3\optional-0.3.jar;C:\Users\prade\.m2\repository\au\com\dius\pact-jvm-matchers_2.11\3.5.13\pact-jvm-matchers_2.11-3.5.13.jar;C:\Users\prade\.m2\repository\io\gatling\jsonpath_2.11\0.6.9\jsonpath_2.11-0.6.9.jar;C:\Users\prade\.m2\repository\com\googlecode\java-diff-utils\diffutils\1.3.0\diffutils-1.3.0.jar;C:\Users\prade\.m2\repository\commons-io\commons-io\2.5\commons-io-2.5.jar;C:\Users\prade\.m2\repository\org\fusesource\jansi\jansi\1.16\jansi-1.16.jar;C:\Users\prade\.m2\repository\org\reflections\reflections\0.9.10\reflections-0.9.10.jar;C:\Users\prade\.m2\repository\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;C:\Users\prade\.m2\repository\com\google\code\findbugs\annotations\2.0.1\annotations-2.0.1.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\fluent-hc\4.5.3\fluent-hc-4.5.3.jar;C:\Users\prade\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\httpclient\4.5.5\httpclient-4.5.5.jar;C:\Users\prade\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\prade\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\prade\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\prade\.m2\repository\org\jooq\jool\0.9.11\jool-0.9.11.jar;C:\Users\prade\.m2\repository\com\github\rholder\guava-retrying\2.0.0\guava-retrying-2.0.0.jar;C:\Users\prade\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\prade\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\prade\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\prade\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\prade\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\prade\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\prade\.m2\repository\com\google\code\findbugs\jsr305\2.0.2\jsr305-2.0.2.jar;C:\Users\prade\.m2\repository\javax\mail\mail\1.5.0-b01\mail-1.5.0-b01.jar;C:\Users\prade\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\prade\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\prade\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.8.10\jackson-datatype-joda-2.8.10.jar;C:\Users\prade\.m2\repository\joda-time\joda-time\2.9.9\joda-time-2.9.9.jar;, sun.cpu.endian=little, user.home=C:\Users\prade, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2022-10-18, java.home=D:\softwares\graalvm-ce-java11-22.3.0, file.separator=\, basedir=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider, java.vm.compressedOopsMode=Zero based, line.separator=
+, jdk.internal.vm.ci.enabled=true, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, surefire.real.class.path=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider\target\surefire\surefirebooter10420175059496650444.jar, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=11.0.17+8-jvmci-22.3-b08, user.name=prade, path.separator=;, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, file.encoding=Cp1252, java.vm.name=OpenJDK 64-Bit Server VM, java.vendor.version=GraalVM CE 22.3.0, localRepository=C:\Users\prade\.m2\repository, java.vendor.url.bug=https://github.com/oracle/graal/issues, java.io.tmpdir=C:\Users\prade\AppData\Local\Temp\, java.version=11.0.17, user.dir=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.awt.windows.WPrinterJob, sun.os.patch.level=, java.library.path=D:\softwares\graalvm-ce-java11-22.3.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\softwares\graalvm-ce-java11-22.3.0\bin;C:\Program Files\apache-maven-3.8.6\bin;C:\Users\prade\AppData\Local\Microsoft\WindowsApps;;., java.vm.info=mixed mode, sharing, java.vendor=GraalVM Community, java.vm.version=11.0.17+8-jvmci-22.3-b08, sun.io.unicode.encoding=UnicodeLittle, java.class.version=55.0}}, SystemEnvironmentPropertySource@243596165 {name='systemEnvironment', properties={PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\softwares\graalvm-ce-java11-22.3.0\bin;C:\Program Files\apache-maven-3.8.6\bin;C:\Users\prade\AppData\Local\Microsoft\WindowsApps;, USERDOMAIN_ROAMINGPROFILE=PRADEEPSWETHA, PROCESSOR_LEVEL=6, SYSTEMDRIVE=C:, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, DRIVERDATA=C:\Windows\System32\Drivers\DriverData, __INTELLIJ_COMMAND_HISTFILE__=C:\Users\prade\AppData\Local\JetBrains\IdeaIC2022.2\terminal\history\customerprofile-pact-testing-example-history, MAVEN_HOME=C:\Program Files\apache-maven-3.8.6, PROGRAMFILES=C:\Program Files, PSMODULEPATH=C:\Users\prade\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules, PROGRAMDATA=C:\ProgramData, USERNAME=prade, WDIR=D:\, ONEDRIVE=C:\Users\prade\OneDrive, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL, ONEDRIVECONSUMER=C:\Users\prade\OneDrive, CLASSWORLDS_JAR="C:\Program Files\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar", WINDIR=C:\Windows, HOMEPATH=\Users\prade, TERM_SESSION_ID=11392f55-db98-416d-87e3-76cad9db5f3b, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel, M2_HOME=C:\Program Files\apache-maven-3.8.6, PUBLIC=C:\Users\Public, =::=::\, ZES_ENABLE_SYSMAN=1, LOCALAPPDATA=C:\Users\prade\AppData\Local, COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, USERDOMAIN=PRADEEPSWETHA, LOGONSERVER=\\PRADEEPSWETHA, JAVA_HOME=D:\softwares\graalvm-ce-java11-22.3.0, PROMPT=$P$G, PROGRAMFILES(X86)=C:\Program Files (x86), EFC_3844=1, ERROR_CODE=0, EXEC_DIR=D:\IntelijWorkSpace\customerprofile-pact-testing-example, =C:=C:\, APPDATA=C:\Users\prade\AppData\Roaming, PROGRAMW6432=C:\Program Files, SYSTEMROOT=C:\Windows, MAVEN_CMD_LINE_ARGS=verify pact:publish --debug, OS=Windows_NT, COMMONPROGRAMW6432=C:\Program Files\Common Files, COMPUTERNAME=PRADEEPSWETHA, COMMONPROGRAMFILES=C:\Program Files\Common Files, COMSPEC=C:\Windows\system32\cmd.exe, JAVACMD=D:\softwares\graalvm-ce-java11-22.3.0\bin\java.exe, MAVEN_PROJECTBASEDIR=D:\IntelijWorkSpace\customerprofile-pact-testing-example, PROCESSOR_REVISION=9a03, CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher, TERMINAL_EMULATOR=JetBrains-JediTerm, =D:=D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider, TEMP=C:\Users\prade\AppData\Local\Temp, HOMEDRIVE=C:, USERPROFILE=C:\Users\prade, TMP=C:\Users\prade\AppData\Local\Temp, NUMBER_OF_PROCESSORS=16, JVMCONFIG=\.mvn\jvm.config, IDEA_INITIAL_DIRECTORY=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.2\bin}}]
+21:56:15.500 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+21:56:15.500 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'Inlined Test Properties' with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v1.5.10.RELEASE)
+
+2023-03-19 21:56:15.774  WARN 26272 --- [           main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/prade/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/prade/.m2/repository/org/json/json/20140107/json-20140107.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2023-03-19 21:56:15.782  INFO 26272 --- [           main] c.c.p.CustomerProfileProviderPactTest    : Starting CustomerProfileProviderPactTest on PradeepSwetha with PID 26272 (started by prade in D:\IntelijWorkSpace\customerprofile-pact-testing-example\customerprofile-provider)
+2023-03-19 21:56:15.782  INFO 26272 --- [           main] c.c.p.CustomerProfileProviderPactTest    : No active profile set, falling back to default profiles: default
+2023-03-19 21:56:15.803  INFO 26272 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@107bfcb2: startup date [Sun Mar 19 21:56:15 IST 2023]; root of context hierarchy
+2023-03-19 21:56:16.657  INFO 26272 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2023-03-19 21:56:16.669  INFO 26272 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-19 21:56:16.670  INFO 26272 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2023-03-19 21:56:17.246  INFO 26272 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-19 21:56:17.246  INFO 26272 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1448 ms
+2023-03-19 21:56:17.341  INFO 26272 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2023-03-19 21:56:17.343  INFO 26272 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2023-03-19 21:56:17.344  INFO 26272 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2023-03-19 21:56:17.344  INFO 26272 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2023-03-19 21:56:17.344  INFO 26272 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2023-03-19 21:56:17.565  INFO 26272 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@107bfcb2: startup date [Sun Mar 19 21:56:15 IST 2023]; root of context hierarchy
+2023-03-19 21:56:17.612  INFO 26272 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCustomerProfile/{customerNumber}]}" onto public com.contracttest.pact.model.CustomerProfile com.contracttest.pact.CustomerProfileController.getCustomerProfile(java.lang.String)
+2023-03-19 21:56:17.614  INFO 26272 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2023-03-19 21:56:17.615  INFO 26272 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2023-03-19 21:56:17.634  INFO 26272 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-03-19 21:56:17.634  INFO 26272 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-03-19 21:56:17.663  INFO 26272 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-03-19 21:56:17.913  INFO 26272 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2023-03-19 21:56:17.918  INFO 26272 --- [           main] c.c.p.CustomerProfileProviderPactTest    : Started CustomerProfileProviderPactTest in 2.415 seconds (JVM running for 4.736)
+
+Verifying a pact between customerProfileConsumer and customerProfileProvider
+  A contact request for customer Profile
+2023-03-19 21:56:18.052  INFO 26272 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-19 21:56:18.052  INFO 26272 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2023-03-19 21:56:18.066  INFO 26272 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+    returns a response which
+      has status code 200 (FAILED)
+      includes headers
+        "Content-Type" with value "application/json;charset=UTF-8" (OK)
+      has a matching body (FAILED)
+
+Failures:
+
+0) A contact request for customer Profile returns a response which has a matching body
+      $ -> Expected a Map with at least 8 elements but received 5 elements
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected originatingAppId='BookMyShow' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected phoneNumber='8907865478' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected emailAddress='xyz.abc@gmail.com' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected lastName='Rajkumar' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected firstName='Punith' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected customerNumber='684088275' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected customerCompanyNumber='111' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+      $ -> Expected ssn='1234578' but was missing
+
+        Diff:
+
+        {
+        -    "originatingAppId": "BookMyShow",
+        -    "phoneNumber": "8907865478",
+        -    "emailAddress": "xyz.abc@gmail.com",
+        -    "lastName": "Rajkumar",
+        -    "firstName": "Punith",
+        -    "customerNumber": "684088275",
+        -    "customerCompanyNumber": "111",
+        -    "ssn": "1234578"
+        +    "path": "/getCustomerProfile",
+        +    "timestamp": 1679243178089,
+        +    "error": "Not Found",
+        +    "status": 404,
+        +    "message": "No message available"
+        }
+
+
+1) A contact request for customer Profile returns a response which has status code 200
+      assert expectedStatus == actualStatus
+             |              |  |
+             200            |  404
+                            false
+
+]]></system-out>
   </testcase>
 </testsuite>
